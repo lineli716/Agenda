@@ -1,0 +1,64 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string line = "";
+		string[] nombre= new string[4];
+		int[] celular= new int[4];
+		string[] correo= new string[4];
+		string[] direccion= new string[4];
+		string[] cumpleaños= new string[4];
+		
+		for (int y=0; y<4; y++)
+		{
+			Console.Write("Ingrese nombre: ");
+			nombre[y] = Console.ReadLine();
+			Console.Write("Ingrese celular: ");
+			line = Console.ReadLine();
+			celular[y] = int.Parse(line);
+			Console.Write("Ingrese el correo: ");
+			correo[y] = Console.ReadLine();
+			Console.Write("Ingresa la dirrecion: ");
+			direccion[y] = Console.ReadLine();
+			Console.Write("Ingresa fecha de cumpleaños: ");
+			cumpleaños[y] = Console.ReadLine();
+			
+		}	
+		for (int x = 0; x < 4; x++)
+		{
+			Console.WriteLine("nombre: "+nombre[x] + " celular: " + celular[x] + " correo: " + correo[x] + "direccion: " + direccion[x] + "cumpleaños: " + cumpleaños[x]);
+		}
+
+		Console.Write("Ingresa el nombre a buscar:  ");
+		line=Console.ReadLine();
+		
+		string consulta = "usuario no encontrado";
+		
+		for (int y= 0; y < 4; y++)
+		{
+			if(nombre[y] == line)
+			consulta= "nombre: "+nombre[y] + " celular: " + celular[y] + " correo: " + correo[y] + "direccion: " + direccion[y] + "cumpleaños: " + cumpleaños[y];
+			
+		}	
+		
+		Console.Write("Ingrese el nombre a borrar: ");
+		line=Console.ReadLine();
+		
+		for (int x = 0; x < 4; x++)
+		{
+			if(nombre[x] == line)
+			{
+			  nombre[x] = "	";
+			  celular[x] = 0000;
+			  correo[x] = " ";
+			  direccion[x] = " ";
+			  cumpleaños[x] =" ";
+			}	
+	
+		}
+		Console.Write(consulta);
+			
+	}
+}
